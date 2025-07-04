@@ -17,3 +17,7 @@ Route::get('/profile', function(){
 Route::get('/home', function(){
     return view('home');
 });
+
+Route::get('/sign', function(){
+    return view('sign');
+});
