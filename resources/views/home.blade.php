@@ -311,7 +311,7 @@
                     <div class="area-name">FILKOM Edutech</div>
                     <div class="capacity-row">
                         <span class="capacity-text">Kapasitas</span>
-                        <span class="capacity-percentage">88,69%</span>
+                        <span class="capacity-percentage">Coming Soon</span>
                     </div>
                 </div>
             </div>
@@ -326,7 +326,7 @@
                     <div class="area-name">Fakultas Ilmu Budaya</div>
                     <div class="capacity-row">
                         <span class="capacity-text">Kapasitas</span>
-                        <span class="capacity-percentage">21,17%</span>
+                        <span class="capacity-percentage">Coming Soon</span>
                     </div>
                 </div>
             </div>
@@ -341,7 +341,7 @@
                     <div class="area-name">Fakultas Hukum</div>
                     <div class="capacity-row">
                         <span class="capacity-text">Kapasitas</span>
-                        <span class="capacity-percentage">75,20%</span>
+                        <span class="capacity-percentage">Coming Soon</span>
                     </div>
                 </div>
             </div>
@@ -356,7 +356,7 @@
                     <div class="area-name">Rusunawa UB</div>
                     <div class="capacity-row">
                         <span class="capacity-text">Kapasitas</span>
-                        <span class="capacity-percentage">12,22%</span>
+                        <span class="capacity-percentage">Coming Soon</span>
                     </div>
                 </div>
             </div>
@@ -371,7 +371,7 @@
                     <div class="area-name">Pendidikan Vokasi UB</div>
                     <div class="capacity-row">
                         <span class="capacity-text">Kapasitas</span>
-                        <span class="capacity-percentage">16,90%</span>
+                        <span class="capacity-percentage">Coming Soon</span>
                     </div>
                 </div>
             </div>
