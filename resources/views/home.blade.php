@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Park.inUB - Beranda</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome untuk ikon (Pastikan Anda terkoneksi internet saat menguji) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Import font Konkhmer Sleokchher dari Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap">
     <style>
         /* Variabel Warna (Opsional) */
         :root {
-            --primary-blue: #0A3C71; /* Warna biru gelap (mungkin tidak terpakai sekarang) */
+            --primary-blue: #0A3C71;
             --white: #ffffff;
             --light-gray: #f0f0f0;
             --dark-gray: #333333;
@@ -49,7 +52,6 @@
         .navbar {
             width: 100%;
             height: 144px; /* Tinggi navbar */
-            /* background-color: var(--primary-blue); HAPUS BACKGROUND COLOR */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -65,7 +67,8 @@
         .navbar .brand-logo-text {
             display: flex;
             align-items: center;
-            gap: 15px;
+            /* Mengurangi jarak antara logo dan teks "Park.inUB" */
+            gap: 5px; /* Mengurangi gap dari 15px menjadi 5px */
         }
 
         .navbar .brand-logo-text .app-logo {
@@ -74,11 +77,27 @@
             object-fit: contain;
         }
 
-        .navbar .brand-logo-text .app-name {
+        /* Gaya untuk teks "Park.inUB" di navbar */
+        .navbar .brand-logo-text .app-name-group {
+            display: flex;
+            flex-direction: row; /* Park.in dan UB sejajar */
+            align-items: baseline; /* Sejajarkan ke baseline */
+            gap: 5px; /* Jarak horizontal antara Park.in dan UB */
             font-size: 48px;
-            font-weight: bold;
-            color: var(--white); /* Pastikan teks tetap putih atau warna kontras */
+            line-height: 1.2;
+            color: var(--white);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tambahkan shadow agar lebih mudah dibaca */
+        }
+
+        .navbar .brand-logo-text .app-name-part-parkin {
+            font-family: 'Konkhmer Sleokchher', cursive;
+            font-weight: normal; /* Lebih tipis */
+            opacity: 0.7; /* Menurunkan opacity untuk Park.in */
+        }
+
+        .navbar .brand-logo-text .app-name-part-ub {
+            font-family: 'Konkhmer Sleokchher', cursive;
+            font-weight: bold; /* Lebih tebal */
         }
 
         .navbar .profile-icon-link {
@@ -97,8 +116,7 @@
 
         .header-image {
             width: 100%;
-            /* Tinggi harus cukup untuk menampung navbar dan bagian atas gambar */
-            height: auto; /* Biarkan tinggi menyesuaikan aspek rasio gambar */
+            height: auto;
             object-fit: cover;
             display: block;
             max-height: 400px; /* Batas tinggi maksimal gambar header */
@@ -200,17 +218,14 @@
                 padding: 0 20px;
             }
             .navbar .brand-logo-text {
-                gap: 10px;
+                gap: 5px; /* Sesuaikan gap untuk responsivitas */
             }
             .navbar .brand-logo-text .app-logo {
                 width: 35px;
                 height: 68px;
             }
-            .navbar .brand-logo-text .app-name {
+            .navbar .brand-logo-text .app-name-group {
                 font-size: 36px;
-            }
-            .navbar .profile-icon-link i {
-                font-size: 28px;
             }
             .header-image {
                 max-height: 300px;
@@ -275,7 +290,11 @@
             <div class="navbar">
                 <div class="brand-logo-text">
                     <img src="{{ asset('images/logo.png') }}" alt="Park.inUB Logo" class="app-logo">
-                    <div class="app-name">Park.inUB</div>
+                    {{-- Menggunakan div untuk menampung Park.in dan UB --}}
+                    <div class="app-name-group">
+                        <span class="app-name-part-parkin">ark.in</span>
+                        <span class="app-name-part-ub">UB</span>
+                    </div>
                 </div>
                 <a href="{{ url('/profile') }}" class="profile-icon-link">
                     <i class="fa-solid fa-user"></i>
