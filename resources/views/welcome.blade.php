@@ -28,7 +28,7 @@
         <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-auto h-19-custom">
         <div class="text-left leading-tight -ml-0">
             {{-- Menggunakan span untuk kontrol font-weight yang lebih baik dan semantik --}}
-            <span class="text-xl font-konkhmer-parkin block">Park.in</span>
+            <span class="text-xl font-konkhmer-parkin block">ark.in</span>
             <span class="text-sm font-konkhmer-ub block">UB</span>
         </div>
     </div>
