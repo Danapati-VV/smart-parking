@@ -1,23 +1,15 @@
 <?php
-
+use App\Http\Controllers\ParkController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\EnsureFacultySelected;
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function(){
-    return view('login');
-});
+Route::get('/sign', [ParkController::class, 'sign'])->name('sign');
+Route::post('/sign', [ParkController::class, 'postSign'])->name('post.sign');
 
-Route::get('/profile', function(){
-    return view('profile');
-});
-
-Route::get('/home', function(){
-    return view('home');
-});
-
-Route::get('/sign', function(){
-    return view('sign');
+Route::middleware(EnsureFacultySelected::class)->group(function () {
+    Route::get('/home', [ParkController::class, 'home'])->name('home');
 });
