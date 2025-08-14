@@ -39,4 +39,20 @@ class ParkController extends Controller
 
         return view('home', compact('faculties', 'selectedFaculty'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'percent' => 'required|numeric|min:0|max:100'
+        ]);
+
+        $faculty = Faculty::findOrFail($id);
+        $faculty->percent = $request->percent;
+        $faculty->save();
+
+        return response()->json([
+            'message' => 'Persentase berhasil diperbarui',
+            'faculty' => $faculty
+        ]);
+    }
 }

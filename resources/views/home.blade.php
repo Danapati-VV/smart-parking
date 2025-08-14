@@ -335,7 +335,7 @@
         <div class="header-image-container">
             <div class="navbar">
                 <div class="brand-logo-text">
-                    <img src="{{ asset('images/logo.png') }}" alt="Park.inUB Logo" class="app-logo">
+                    <img src="{{ asset('images/park.png') }}" alt="Park.inUB Logo" class="app-logo">
                     {{-- Menggunakan div untuk menampung Park.in dan UB --}}
                     <div class="app-name-group">
                         <span class="app-name-part-parkin">ark.in</span>

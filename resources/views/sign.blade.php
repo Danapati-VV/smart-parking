@@ -50,12 +50,9 @@
         .navbar {
             width: 100%;
             height: 144px;
-            /* Tinggi navbar */
             background-color: var(--primary-blue);
-            /* Warna biru solid untuk navbar */
             display: flex;
             justify-content: flex-start;
-            /* Logo dan teks di kiri */
             align-items: center;
             padding: 0 40px;
             box-sizing: border-box;
@@ -65,13 +62,7 @@
         .navbar .brand-logo-text {
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-
-        .navbar .brand-logo-text {
-            width: 43px;
-            height: 83px;
-            object-fit: contain;
+            gap: 14px;
         }
 
         .app-logo {
@@ -79,17 +70,23 @@
             height: auto;
         }
 
+        .navbar .brand-logo-text .app-logo {
+            height: 80px;
+            /* tinggi fix */
+            width: auto;
+            /* lebar menyesuaikan proporsi asli */
+            object-fit: contain;
+            /* jaga proporsi gambar */
+            display: block;
+        }
+
         /* Perubahan di sini untuk menata "Park.in UB" sejajar */
         .navbar .brand-logo-text .app-name-group {
             display: flex;
             flex-direction: row;
-            /* Mengubah arah layout menjadi baris (Park.in dan UB sejajar) */
             align-items: baseline;
-            /* Sejajarkan teks berdasarkan garis dasar (baseline) */
             gap: 5px;
-            /* Jarak horizontal antara "Park.in" dan "UB" */
             font-size: 48px;
-            /* Ukuran font untuk navbar */
             line-height: 1.2;
             color: var(--white);
         }
@@ -272,7 +269,7 @@
         <!-- HEADER / NAVBAR -->
         <div class="navbar">
             <div class="brand-logo-text">
-                <img src="{{ asset('images/logo.png') }}" alt="Park.inUB Logo" class="app-logo">
+                <img src="{{ asset('images/park.png') }}" alt="Park.inUB Logo" class="app-logo">
                 {{-- Mengatur "Park.in UB" sejajar dengan logo --}}
                 <div class="app-name-group">
                     <span class="app-name-part-parkin">ark.in</span>
@@ -299,7 +296,9 @@
                             <option value="{{ $f->id }}">{{ $f->name }}</option>
                         @endforeach
                     </select>
-                    @error('faculty_id') <div class="text-red-600">{{ $message }}</div> @enderror
+                    @error('faculty_id')
+                        <div class="text-red-600">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <button type="submit" class="submit-button">Masuk</button>
