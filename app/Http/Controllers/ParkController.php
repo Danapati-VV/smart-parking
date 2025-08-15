@@ -55,4 +55,20 @@ class ParkController extends Controller
             'faculty' => $faculty
         ]);
     }
+
+    public function add(Request $request){
+        $request->validate([
+            'name' => 'required|min:1|max:150',
+            'percent' => 'required|numeric|min:0|max:100'
+        ]);
+
+        Faculty::create([
+            'name' => $request->name,
+            'percent' => $request->percent
+        ]);
+
+        return request()->json([
+            'message' => 'Berhasil ditambahkan'
+        ]);
+    }
 }
