@@ -350,7 +350,7 @@
 
             <div class="parking-area-card selected">
                 <div class="card-image-container">
-                    <img src="{{ asset('images/gedung_g.png') }}" alt="FILKOM Gedung G" class="card-image">
+                    <img src="{{ asset('storage/' . $selectedFaculty->image) }}" alt="FILKOM Gedung G" class="card-image">
                     <img src="{{ asset('images/pin_yellow.png') }}" alt="Pin Kuning" class="pin-icon">
                 </div>
                 <div class="card-details">
@@ -366,7 +366,7 @@
             @foreach ($faculties as $faculty)
                 <div class="parking-area-card">
                     <div class="card-image-container">
-                        <img src="{{ asset('images/gedung_g.png') }}" alt="FILKOM Gedung G" class="card-image">
+                        <img src="{{ asset('storage/' . $faculty->image) }}" alt="FILKOM Gedung G" class="card-image">
                         <img src="{{ asset('images/pin_yellow.png') }}" alt="Pin Kuning" class="pin-icon">
                     </div>
                     <div class="card-details">

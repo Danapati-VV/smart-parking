@@ -59,12 +59,14 @@ class ParkController extends Controller
     public function add(Request $request){
         $request->validate([
             'name' => 'required|min:1|max:150',
-            'percent' => 'required|numeric|min:0|max:100'
+            'percent' => 'required|numeric|min:0|max:100',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
-
+        $path = $request->file('image')->store('faculties', 'public');
         Faculty::create([
             'name' => $request->name,
-            'percent' => $request->percent
+            'percent' => $request->percent,
+            'image' => $path
         ]);
 
         return request()->json([
