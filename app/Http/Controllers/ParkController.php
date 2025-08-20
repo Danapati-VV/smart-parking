@@ -77,7 +77,7 @@ class ParkController extends Controller
         ]);
     }
 
-    public function obtain(int $id): JsonResponse
+    public function obtain($id): JsonResponse
     {
         $fac = Faculty::findOrFail($id);
 
