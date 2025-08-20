@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Faculty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Http\JsonResponse;
 
 class ParkController extends Controller
 {
@@ -56,7 +58,8 @@ class ParkController extends Controller
         ]);
     }
 
-    public function add(Request $request){
+    public function add(Request $request)
+    {
         $request->validate([
             'name' => 'required|min:1|max:150',
             'percent' => 'required|numeric|min:0|max:100',
@@ -71,6 +74,15 @@ class ParkController extends Controller
 
         return request()->json([
             'message' => 'Berhasil ditambahkan'
+        ]);
+    }
+
+    public function obtain(int $id): JsonResponse
+    {
+        $fac = Faculty::findOrFail($id);
+
+        return response()->json([
+            'percent'    => (float) $fac->percent   // <-- kirim float
         ]);
     }
 }

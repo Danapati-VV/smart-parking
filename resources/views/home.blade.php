@@ -300,6 +300,9 @@
             .parking-area-card .capacity-percentage {
                 font-size: 22px;
             }
+            .selected {
+                border: 1px solid darkblue;
+            }
         }
 
         @media (max-width: 600px) {
@@ -323,7 +326,7 @@
                 text-align: center;
             }
             .selected {
-                border: 1px solid blue;
+                border: 1px solid darkblue;
             }
         }
     </style>
